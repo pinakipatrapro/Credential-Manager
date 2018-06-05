@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv='Content-Type' content='text/html;charset=UTF-8'/>
+
+		<script src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+				id="sap-ui-bootstrap"
+				data-sap-ui-libs="sap.m"
+				data-sap-ui-xx-bindingSyntax="complex"
+				data-sap-ui-theme="sap_belize_plus">
+		</script>
+		<!-- only load the mobile lib "sap.m" and the "sap_bluecrystal" theme -->
+	  	<link rel="stylesheet" href="css/style.css">
+		<script>
+				sap.ui.localResources("localstorage");
+				var app = new sap.m.App('idAppContainer',{
+					initialPage:"idHome",
+					backgroundImage : 'image/bg.jpg',
+					backgroundOpacity : .10
+				});
+				var page = sap.ui.view({id:"idHome", viewName:"localstorage.Home", type:sap.ui.core.mvc.ViewType.JS});
+				var passwordPage = sap.ui.view({id:"idAddPassword", viewName:"localstorage.AddPassword", type:sap.ui.core.mvc.ViewType.JS});
+				var detailsPage = sap.ui.view({id:"idDetails", viewName:"localstorage.Details", type:sap.ui.core.mvc.ViewType.JS});
+				var cameraPage = sap.ui.view({id:"idCamera", viewName:"localstorage.Camera", type:sap.ui.core.mvc.ViewType.JS});
+				app.addPage(page);
+				app.addPage(passwordPage);
+				app.addPage(detailsPage);
+				app.addPage(cameraPage);
+				app.placeAt("content");
+		</script>
+
+	</head>
+	<body class="sapUiBody" role="application">
+		<div id="content"></div>
+	</body>
+</html>
